@@ -1,0 +1,165 @@
+Algoritmo "Agência de viagens"
+
+Var
+
+cliente: vetor[1..5] de caractere
+telefone: vetor[1..5] de inteiro
+endereco: vetor[1..5]de caractere
+
+destino:vetor[1..5] de caractere
+pais: vetor[1..5] de caracter
+preco: vetor[1..5] de inteiro
+totalCliente:vetor[1..5]de inteiro
+totalGeral:inteiro
+opcao:inteiro
+i:inteiro
+j:inteiro
+
+procedimento cadastrarDestino()
+inicio
+para i de 1 ate 3 faca
+escreval("digite quais são os seus possíveis destino",i)
+leia(destino[i])
+fimpara
+fimprocedimento
+
+procedimento listarDestino()
+inicio
+para i de 1 ate 3 faca
+escreval("cliente",i, "destinos cadastrados",destino[i])
+fimpara
+fimprocedimento
+
+procedimento precoDestino()
+inicio
+
+para i de 1 ate 3 faca
+escreval("digite o preco dos destinos dos clientes")
+leia(cliente[i])
+totalCliente[i]<-0
+para j de 1 ate 3 faca
+escreval("digite o preço do destino", j, "para o cliente", cliente[i])
+leia(preco[j])
+totalCliente[i] <- totalCliente + preco[i j]
+fimpara
+fimpara
+totalGeral <-0
+para i de 1 ate 3 faca
+totalGeral <- totalGeral + totalCliente[i]
+fimpara
+escreval("O total Geral é de:", totalGeral)
+
+fimprocedimento
+
+
+
+procedimento cadastroCliente()
+var
+inicio
+ para i de 1 ate 3 faca
+      escreval("escreva o nome do cliente",i)
+      leia(cliente[i])
+      fimpara
+
+fimprocedimento
+
+procedimento telefoneCliente()
+inicio
+para i de 1 ate 3 faca
+escreval("digite um número de telefone válido para o cliente",i)
+leia(telefone[i])
+se telefone[i] <= 0 entao
+escreval("telefone não é válido")
+senao escreval("telefone válido e cadastrado")
+fimse
+fimpara
+fimprocedimento
+
+
+
+
+procedimento enderecoCliente()
+inicio
+para i de 1 ate 3 faca
+escreval("digite um endereço válido",i)
+leia(endereco[i])
+fimpara
+fimprocedimento
+
+
+procedimento listagem()
+var
+inicio
+para i de 1 ate 3 faca
+escreval("clientes",i,":",cliente[i],": telefone",telefone[i], ": endereço",endereco[i])
+fimpara
+fimprocedimento
+Inicio
+
+   repita
+   escreval ("1-nome do cliente")
+   escreval ("2-Digite o numero de telefone")
+   escreval ("3-Digite o endereço do cliente")
+   escreval("4-listar clientes cadastrados" )
+   escreval("5-sair" )
+   leia(opcao)
+   escolha (opcao)
+   caso 1
+   limpatela
+   cadastroCliente()
+   caso 2
+     limpatela
+     telefoneCliente()
+   caso 3
+   limpatela
+   enderecoCliente()
+   caso 4
+   listagem()
+   caso 5
+   escreval("fim do primeiro menu")
+     fimescolha
+
+ate opcao = 5
+
+repita
+   escreval ("6-Cadastrar destino")
+   escreval ("7-país")
+   escreval ("8-listar cliente e destino")
+   escreval("9-preco e total" )
+   escreval("5-sair" )
+   leia(opcao)
+   escolha (opcao)
+   caso 6
+   limpatela
+  cadastrarDestino()
+   caso 7
+     limpatela
+     telefoneCliente()
+   caso 8
+   limpatela
+   listarDestino()
+   caso 9
+   limpatela
+   precoDestino()
+   caso 5
+   escreval("fim")
+     fimescolha
+
+ate opcao = 5
+
+
+
+
+
+
+Fimalgoritmo
+
+
+
+
+
+
+
+
+
+
